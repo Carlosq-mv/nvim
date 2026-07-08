@@ -17,7 +17,7 @@ return {
 				css = { "prettierd", "prettier" },
 				json = { "prettierd", "prettier" },
 				yaml = { "prettierd", "prettier" },
-				markdown = { "prettierd", "prettier" },
+				markdown = {},
 			},
 			format_on_save = {
 				timeout_ms = 500,
