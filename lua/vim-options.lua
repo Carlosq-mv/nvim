@@ -9,8 +9,15 @@ vim.opt.relativenumber = true
 vim.opt.wrap = false
 vim.opt.incsearch = true
 vim.opt.splitright = false
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.textwidth = 80
+vim.opt.breakindent = true
 
 vim.keymap.set("i", "jh", "<Esc>", { noremap = true })
+vim.keymap.set("v", "jh", "<Esc>", { noremap = true })
 vim.keymap.set("n", "tt", "$", { noremap = true })
 
 -- Exit terminal mode
@@ -47,3 +54,6 @@ vim.keymap.set("n", "<C-Up>", ":resize +2<CR>")
 vim.keymap.set("n", "<C-Down>", ":resize -2<CR>")
 vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
+
+vim.api.nvim_set_hl(0, "IblIndent", { fg = "#3b3b3b" }) -- dim lines
+vim.api.nvim_set_hl(0, "IblScope", { fg = "#7aa2f7" }) -- bright current scope
