@@ -1,22 +1,44 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	branch = "master",
+	branch = "main",
+	lazy = false,
 	build = ":TSUpdate",
-	config = function()
-		local config = require("nvim-treesitter.configs")
-		config.setup({
-			auto_install = true,
-			highlight = { enable = true },
-			indent = { enable = true },
-		})
-		vim.api.nvim_create_autocmd("ColorScheme", {
-			pattern = "*",
+	init = function()
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = {
+				"lua",
+				"python",
+				"go",
+				"c",
+				"cpp",
+				"java",
+				"javascript",
+				"typescript",
+				"html",
+				"css",
+				"json",
+				"yaml",
+				"markdown",
+			},
 			callback = function()
-				vim.api.nvim_set_hl(0, "@markup.italic", { italic = true })
-				vim.api.nvim_set_hl(0, "@markup.strong", { bold = true })
+				vim.treesitter.start()
 			end,
 		})
-		-- vim.api.nvim_set_hl(0, "@markup.italic", { italic = true })
-		-- vim.api.nvim_set_hl(0, "@markup.strong", { bold = true })
+	end,
+	config = function()
+		require("nvim-treesitter").install({
+			"python",
+			"go",
+			"cpp",
+			"java",
+			"javascript",
+			"typescript",
+			"tsx",
+			"jsx",
+			"html",
+			"css",
+			"json",
+			"yaml",
+		})
 	end,
 }
