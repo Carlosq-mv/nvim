@@ -14,6 +14,7 @@ return {
 			c = { "cpplint" },
 			cpp = { "cpplint" },
 			java = { "checkstyle" },
+			sql = { "sqlfluff" },
 		}
 
 		-- Auto-lint on save, when opening files, and when leaving insert mode
