@@ -18,6 +18,7 @@ return {
 				json = { "prettierd", "prettier" },
 				yaml = { "prettierd", "prettier" },
 				markdown = {},
+				sql = { "sqlfluff" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
